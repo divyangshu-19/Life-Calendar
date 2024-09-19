@@ -19,18 +19,36 @@ function get_weeks () {
     createDivs()
 }
 
+// function createDivs() {
+//     const numberOfDivs = weekslived; // The number of divs you want to create (this can be from another function)
+//     const container = document.getElementById('container'); // Get the container element
+
+//     // Loop to create the number of divs
+//     for (let i = 0; i < numberOfDivs; i++) {
+//         const newDiv = document.createElement('div'); // Create a new div element
+//         // newDiv.textContent = `This is div ${i + 1}`; // Set some text inside the div
+//         newDiv.classList.add("boxstyle")
+
+//         container.appendChild(newDiv); // Add the new div to the container
+//     }
+// }
 function createDivs() {
-    const numberOfDivs = weekslived; // The number of divs you want to create (this can be from another function)
-    const container = document.getElementById('container'); // Get the container element
+    const container = document.getElementById('container');
+    container.innerHTML = ""; // Clear previous boxes
 
-    // Loop to create the number of divs
-    for (let i = 0; i < numberOfDivs; i++) {
-        const newDiv = document.createElement('div'); // Create a new div element
-        newDiv.textContent = `This is div ${i + 1}`; // Set some text inside the div
-        newDiv.style.backgroundColor = 'lightblue'; // Add some style to the div
-        newDiv.style.margin = '10px'; // Add margin
-        newDiv.style.padding = '20px'; // Add padding
+    const totalWeeks = parseInt(document.getElementById("last-year").value) * 52 || 4000;
+    
+    // Create total weeks boxes
+    for (let i = 0; i < totalWeeks; i++) {
+        const newDiv = document.createElement('div');
+        newDiv.classList.add("boxstyle");
+        
+        // Fill the weeks lived with black color
+        if (i < weekslived) {
+            newDiv.classList.add("lived");
+        }
 
-        container.appendChild(newDiv); // Add the new div to the container
+        container.appendChild(newDiv);
     }
 }
+

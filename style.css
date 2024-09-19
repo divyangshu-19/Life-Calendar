@@ -13,3 +13,27 @@
     
 }
 
+
+
+#container{
+    border: solid 2px rgb(129, 129, 129);
+    padding: 10px;
+    margin: 40px 0px;
+    display: grid;
+    grid-template-columns: repeat(52, 1fr); /* 52 columns for 52 weeks in a year */
+    grid-gap: 5px; /* spacing between boxes */
+
+    /* justify-content: center;
+    align-items: center; */
+}
+.boxstyle{
+    height: 10px;
+    width: 10px;
+    background-color: lightgray;
+    /* margin: 2px; */
+    border-radius: 20%;
+}
+
+.lived {
+    background-color: rgb(129, 129, 129); /* this class will fill the weeks lived */
+}
